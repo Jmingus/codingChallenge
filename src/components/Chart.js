@@ -5,9 +5,8 @@ import Waypoint from 'react-waypoint';
 import MetaData from './MetaData.js';
 
 class Chart extends React.Component {
-    
     render(){
-        console.log(this.props)
+        var dataForChart = {}
         if(this.props.probs.index === 0){
             var allCountrys = [];
             this.props.probs.body.results.forEach(function(item){
@@ -16,7 +15,7 @@ class Chart extends React.Component {
                 temp.push(item.dimensions.country)
                 allCountrys.push(temp.reverse())
             })
-            var dataForChart = {
+            dataForChart = {
                     columns: allCountrys,
                     type: 'pie'
             }
@@ -32,7 +31,7 @@ class Chart extends React.Component {
                 column.push("N/A")
             }
             var reversedColumn = column.reverse()
-            var dataForChart = {
+            dataForChart = {
                     columns: [reversedColumn],
                     type: 'spline'
             }
@@ -47,7 +46,7 @@ class Chart extends React.Component {
                 country.push(countrys.dimensions.country)
                 allCountrys.push(country.reverse())
             })
-            var dataForChart = {
+            dataForChart = {
                 columns: allCountrys,
                 type: 'spline'
             }
@@ -70,7 +69,7 @@ class Chart extends React.Component {
                 <HasMetaData data={this.props.metaData} info={this.props.probs.body.meta}/>
                 </div>
                 <C3Chart data={dataForChart} />
-                </section>
+            </section>
             </Waypoint>
         )
     }

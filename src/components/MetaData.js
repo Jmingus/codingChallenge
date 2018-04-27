@@ -3,10 +3,10 @@ import React from 'react'
 class MetaData extends React.Component {
     render(){
         return(
-            <div>
-                <h2>Maximums{this.props.data.maximums.page_views}</h2>
-                <h2>Minimums{this.props.data.minimums.page_views}</h2>
-                <h2>Totals{this.props.data.totals.page_views}</h2>
+            <div className="metaData row">
+                <h5 className="col m4 l4">Maximums <br/>{this.props.data.maximums.page_views}</h5>
+                <h5 className="col m4 l4">Minimums <br/>{this.props.data.minimums.page_views}</h5>
+                <h5 className="col m4 l4">Totals <br/>{this.props.data.totals.page_views}</h5>
             </div>
         )
     }
